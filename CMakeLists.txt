@@ -88,7 +88,7 @@ qt_add_qml_module(Quantum
     SOURCES src/settings/settingsmanager.h src/settings/settingsmanager.cpp
     SOURCES src/settings/appsettings.h
     RESOURCES
-    RESOURCES build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/config.yaml
+    RESOURCES
 )
 
 # Avoid collision between executable name and QML module directory (QTBUG-98568).

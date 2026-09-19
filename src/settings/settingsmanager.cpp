@@ -2,8 +2,20 @@
 
 SettingsManager::SettingsManager(QObject *parent)
     : QObject{parent}
-    , m_root(YAML::LoadFile("config.yaml"))
-{}
+{
+    try {
+        m_root = YAML::LoadFile("config.yaml");     // Load the file if it already exists.
+    }
+    catch (YAML::BadFile)
+    {
+        m_root = YAML::Node(YAML::NodeType::Map);   // If file does not exist, start a fresh document
+    }                                               // in memory.
+    catch (const YAML::Exception &e)
+    {
+        qDebug() << "Error opening config.yaml: "   // If an error occurs print the error message.
+                 << e.msg;
+    }
+}
 
 void SettingsManager::save()
 {

@@ -6,6 +6,7 @@
 
 #include <QObject>
 #include <fstream>
+#include <QDebug>
 
 class SettingsManager : public QObject
 {
