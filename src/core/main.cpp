@@ -17,7 +17,7 @@
 */
 
 #include "src/backend/backend.h"
-#include "src/core/databasemanager.h"
+#include "src/settings/settingsmanager.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -42,6 +42,10 @@ int main(int argc, char *argv[])
     }
 
     a.setWindowIcon(QIcon(":/qml/assets/icons/icon.ico"));
+
+    SettingsManager *settingsMan(new SettingsManager(nullptr));
+
+    settingsMan->save();            // FOR TESTING ONLY!
 
     Backend backend;
 
