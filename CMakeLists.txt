@@ -91,6 +91,9 @@ if(NOT WIN32 AND NOT APPLE)
     set_property(TARGET Quantum PROPERTY OUTPUT_NAME Quantum_app)
 endif()
 
+add_subdirectory(third-party/yaml-cpp)
+target_link_libraries(Quantum PRIVATE yaml-cpp::yaml-cpp)
+
 target_link_libraries(Quantum PRIVATE
     Qt6::Core
     Qt6::Gui
