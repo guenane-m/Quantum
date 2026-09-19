@@ -44,8 +44,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(":/qml/assets/icons/icon.ico"));
 
     SettingsManager *settingsMan(new SettingsManager(nullptr));
-
-    settingsMan->save();            // FOR TESTING ONLY!
+    settingsMan->load();
 
     Backend backend;
 

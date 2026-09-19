@@ -17,11 +17,20 @@ SettingsManager::SettingsManager(QObject *parent)
     }
 }
 
+void SettingsManager::load()
+{
+    // Load Download Settings:
+    auto download = m_root["DownloadSettings"];
+    if (download["savePath"])               // Check if savePath is available and load it.
+        m_downloadSettings.SavePath =
+            QString::fromStdString(download["savePath"].as<std::string>());
+}
+
 void SettingsManager::save()
 {
     // Save Download Settings:
     YAML::Node download;
-    download["SavePath"] = m_downloadSettings.SavePath
+    download["savePath"] = m_downloadSettings.SavePath
                             .toStdString();
 
     // Assign each category to the settings root:

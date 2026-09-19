@@ -14,6 +14,7 @@ class SettingsManager : public QObject
 public:
     explicit SettingsManager(QObject *parent = nullptr);
 
+    void load();
     void save();
 
 signals:
