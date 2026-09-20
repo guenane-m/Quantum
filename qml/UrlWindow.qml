@@ -27,7 +27,7 @@ Window {
     function resetForm() {
         downloadUrl = ""
         fileNameBox.text = ""
-        pathBox.text = Helper.formatFilePaths(StandardPaths.writableLocation(StandardPaths.DownloadLocation))
+        pathBox.text = Helper.formatFilePaths(backend.savePath)
         sha256Box.text = ""
         backend.setHeadReqCompleted(false)
     }
@@ -110,7 +110,6 @@ Window {
                         clickColor: "#700000"
                         onClicked: {
                             root.closeAnimated()
-                            root.resetForm()
                         }
                     }
                 }
@@ -170,7 +169,6 @@ Window {
 
                 // Save to box
                 RowLayout {
-
                     spacing: 10
 
                     Layout.leftMargin: 25
@@ -184,16 +182,19 @@ Window {
 
                         Layout.fillWidth: true
 
-                        Component.onCompleted: {
-                            text = Helper.formatFilePaths(backend.savePath())
+                        Component.onCompleted:
+                        {
+                            text = Helper.formatFilePaths(backend.savePath)
                         }
+
+
                     }
 
                     FolderDialog {
                         id: folderDialog
 
                         title: "Select download location"
-                        currentFolder: pathBox.text !== "" ? "file:///" + pathBox.text : StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+                        currentFolder: Helper.formatFilePaths(backend.savePath)
 
                         onAccepted: {
                             pathBox.text = Helper.formatFilePaths(selectedFolder)
@@ -314,7 +315,6 @@ Window {
                         // Close the app
                         onClicked: {
                             root.closeAnimated()
-                            root.resetForm()
                         }
                     }
 
@@ -334,7 +334,6 @@ Window {
                         onClicked: {
                             if (backend.downloadRequested(urlBox.text, fileNameBox.text, pathBox.text, Helper.getNumberFromStr(connectionsList.model[connectionsList.currentIndex]), sha256Box.text)) {
                                 root.closeAnimated()
-                                resetForm()
                             }
                         }
                     }
@@ -350,6 +349,7 @@ Window {
     }
 
     function openAnimated() {
+        root.resetForm()
         show()
         raise()
         requestActivate()

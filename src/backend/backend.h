@@ -36,7 +36,7 @@ class Backend : public QObject
     Q_PROPERTY(int pausedCount READ pausedCount NOTIFY countChanged FINAL)
     Q_PROPERTY(int activeCount READ activeCount NOTIFY countChanged FINAL)
     Q_PROPERTY(bool headReqCompleted READ headReqCompleted WRITE setHeadReqCompleted NOTIFY headReqCompletedChanged FINAL)
-    Q_PROPERTY(QString savePath READ savePath NOTIFY settingsChanged FINAL)
+    Q_PROPERTY(QString savePath READ savePath WRITE setSavePath NOTIFY settingsChanged FINAL)
 
 public:
     explicit Backend(SettingsManager *settingsManager, QObject *parent = nullptr);
@@ -57,6 +57,7 @@ public:
     Q_INVOKABLE QString coloredSvg(const QString &path, const QString &color);
     Q_INVOKABLE void setCategory(int category);
     Q_INVOKABLE void setHeadReqCompleted(bool val);
+    Q_INVOKABLE void setSavePath(const QString &path);
 
     DownloadCategory detectCategory(const QString &filename);
 

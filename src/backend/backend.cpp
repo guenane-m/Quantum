@@ -733,3 +733,11 @@ QString Backend::savePath() const
     return m_settingsManager                // Get the save path from the settings manager's
         ->m_downloadSettings.SavePath;      // download settings.
 }
+
+void Backend::setSavePath(const QString &path)
+{
+    m_settingsManager->m_downloadSettings   // Set the passed path to the settings manager value
+        .SavePath = path;
+
+    emit settingsChanged();
+}
