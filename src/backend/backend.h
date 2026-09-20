@@ -73,6 +73,9 @@ public:
     QString savePath() const;
     int rowForId(const QString &id) const;
 
+    // Destructor:
+    ~Backend();
+
 signals:
     void urlRecieved(const QString &url);
     void fileNameChanged();

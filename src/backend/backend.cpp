@@ -741,3 +741,8 @@ void Backend::setSavePath(const QString &path)
 
     emit settingsChanged();
 }
+
+Backend::~Backend()
+{
+    m_settingsManager->save();              // Save the settings before backend is destroyed.
+}
