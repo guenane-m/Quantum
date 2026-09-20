@@ -54,7 +54,7 @@ Item {
 
                     UiButton {
                         buttonHeight: 32
-                        buttonWidth: 100
+                        buttonWidth: 130
 
                         fillColor: fillColor
                         borderColor: borderColor

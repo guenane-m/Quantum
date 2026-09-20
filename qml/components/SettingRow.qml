@@ -21,9 +21,11 @@ Item {
         width: parent.width
 
         Text {
+            Layout.alignment: Qt.AlignVCenter
+
             text: title
             font.family: appFont.name
-            font.pixelSize: 12
+            font.pixelSize: 13
             color: "#FFFFFF"
         }
 

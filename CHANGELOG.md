@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added settings manager that saves settings to a yaml config file.
+- Added default download save path setting.
 
 ### Fixed
 - Fixed wrong download loading by labeling completed downloads as paused.

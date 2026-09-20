@@ -24,6 +24,8 @@ Rectangle {
         anchors.margins: 10
 
         Text {
+            Layout.bottomMargin: 10
+
             text: title
             font.family: appFont.name
             font.pixelSize: 16
