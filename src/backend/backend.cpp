@@ -1,12 +1,13 @@
 #include "backend.h"
 
-Backend::Backend(QObject *parent)
+Backend::Backend(SettingsManager *settingsManager, QObject *parent)
     : QObject{parent}
     , m_webServer(new QTcpServer(this))
     , manager(new QNetworkAccessManager(this))
     , m_fileNameHandler(new FileNameHandler(this))
     , m_databaseManager(new DatabaseManager(this))
     , m_nativeHostSocket(new NativeHostSocket(this))
+    , m_settingsManager(settingsManager)
 {
     m_downloadModel.setDownloads(&m_downloads);
 
@@ -725,4 +726,10 @@ int Backend::rowForId(const QString &id) const
         if (m_downloads[i].ID == id)
             return i;
     return -1;
+}
+
+QString Backend::savePath() const
+{
+    return m_settingsManager                // Get the save path from the settings manager's
+        ->m_downloadSettings.SavePath;      // download settings.
 }

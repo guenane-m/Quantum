@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     SettingsManager *settingsMan(new SettingsManager(nullptr));
     settingsMan->load();
 
-    Backend backend;
+    Backend backend(settingsMan);
 
     QQmlApplicationEngine engine;
 

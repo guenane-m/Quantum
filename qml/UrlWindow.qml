@@ -185,7 +185,7 @@ Window {
                         Layout.fillWidth: true
 
                         Component.onCompleted: {
-                            text = Helper.formatFilePaths(StandardPaths.writableLocation(StandardPaths.DownloadLocation))
+                            text = Helper.formatFilePaths(backend.savePath())
                         }
                     }
 

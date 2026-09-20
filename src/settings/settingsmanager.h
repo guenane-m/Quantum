@@ -14,15 +14,18 @@ class SettingsManager : public QObject
 public:
     explicit SettingsManager(QObject *parent = nullptr);
 
+    // Functions:
     void load();
     void save();
+
+    // Properties:
+    DownloadSettings m_downloadSettings;
 
 signals:
 
 private:
     YAML::Node m_root;
 
-    DownloadSettings m_downloadSettings;
 };
 
 #endif // SETTINGSMANAGER_H

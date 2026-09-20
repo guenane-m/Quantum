@@ -8,6 +8,7 @@
 #include "src/backend/filenamehandler.h"
 #include "src/core/databasemanager.h"
 #include "nativehostsocket.h"
+#include "src/settings/settingsmanager.h"
 
 #include <QObject>
 #include <QStandardPaths>
@@ -35,9 +36,10 @@ class Backend : public QObject
     Q_PROPERTY(int pausedCount READ pausedCount NOTIFY countChanged FINAL)
     Q_PROPERTY(int activeCount READ activeCount NOTIFY countChanged FINAL)
     Q_PROPERTY(bool headReqCompleted READ headReqCompleted WRITE setHeadReqCompleted NOTIFY headReqCompletedChanged FINAL)
+    Q_PROPERTY(QString savePath READ savePath NOTIFY settingsChanged FINAL)
 
 public:
-    explicit Backend(QObject *parent = nullptr);
+    explicit Backend(SettingsManager *settingsManager, QObject *parent = nullptr);
 
     void StartWebServer();
     Q_INVOKABLE void clearDatabase();
@@ -67,6 +69,7 @@ public:
     int pausedCount() const;
     int activeCount() const;
     bool headReqCompleted() const;
+    QString savePath() const;
     int rowForId(const QString &id) const;
 
 signals:
@@ -76,6 +79,7 @@ signals:
     void isHeadReqActiveChanged();
     void headReqCompletedChanged();
     void countChanged();
+    void settingsChanged();
 
 private:
     // Functions
@@ -90,6 +94,7 @@ private:
     FileNameHandler m_fileNameHandler;
     DatabaseManager *m_databaseManager;
     NativeHostSocket *m_nativeHostSocket;
+    SettingsManager *m_settingsManager;
     QString m_fileName;
     qint64 m_fileSize = 0;
     bool m_isHeadReqActive = false;
