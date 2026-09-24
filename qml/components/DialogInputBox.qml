@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Controls
+import Quantum
 
 Item {
     property string titleText
@@ -17,7 +18,7 @@ Item {
         Text {
             text: titleText
 
-            color: "#656565"
+            color: Appearance.textSecondary
 
             font.pixelSize: 10
             font.family: appFont.name
@@ -26,11 +27,11 @@ Item {
         Rectangle {
             id: urlBox
 
-            color: input.hovered ? "#200025" : "#100019"
+            color: input.hovered ? Appearance.inputBackgroundHover : Appearance.background
 
             radius: 6
 
-            border.color: input.activeFocus ? "#AE00FF" : "#480069"
+            border.color: input.activeFocus ? Appearance.accentFocus : Appearance.accentDim
             border.width: 2
 
             Layout.preferredHeight: 32

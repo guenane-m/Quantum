@@ -1,12 +1,13 @@
 import QtQuick 2.15
+import Quantum
 
 Rectangle {
     id: root
 
     // Declare properties
     property string buttonIcon
-    property color hoverColor : "#151515"
-    property color clickColor : "#101010"
+    property color hoverColor : Appearance.windowButtonHover
+    property color clickColor : Appearance.windowButtonPressed
     signal clicked()
 
     width: 26.25

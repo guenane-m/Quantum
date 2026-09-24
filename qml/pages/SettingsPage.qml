@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import Quantum
 import "../components"
 import "../js/Helper.js" as Helper
 
@@ -55,9 +56,6 @@ Item {
                     UiButton {
                         buttonHeight: 32
                         buttonWidth: 130
-
-                        fillColor: fillColor
-                        borderColor: borderColor
 
                         buttonText: "Clear"
                         buttonIcon: "qrc:/qml/assets/icons/reset.svg"

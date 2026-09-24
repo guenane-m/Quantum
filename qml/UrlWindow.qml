@@ -3,6 +3,7 @@ import QtQuick 2.15
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import Quantum
 import "components"
 import "js/Helper.js" as Helper
 
@@ -62,7 +63,7 @@ Window {
             width: parent.width
             height: 26.25
 
-            color: "#000000"
+            color: Appearance.chromeBackground
 
             // Add title bar content
             RowLayout {
@@ -77,7 +78,7 @@ Window {
                     text: "NEW DOWNLOAD"
                     font.family: appFont.name
                     font.pixelSize: 15
-                    color: "#ffffff"
+                    color: Appearance.chromeText
                     Layout.alignment: Qt.AlignVCenter
                 }
 
@@ -106,8 +107,8 @@ Window {
                     WindowButton {
                         id: close
                         buttonIcon: "qrc:/qml/assets/icons/close.png"
-                        hoverColor: "#ff0000"
-                        clickColor: "#700000"
+                        hoverColor: Appearance.closeButtonHover
+                        clickColor: Appearance.closeButtonPressed
                         onClicked: {
                             root.closeAnimated()
                         }
@@ -237,7 +238,7 @@ Window {
                         Text {
                             text: "CONNECTIONS"
 
-                            color: "#656565"
+                            color: Appearance.textSecondary
 
                             font.pixelSize: 10
                             font.family: appFont.name
@@ -344,7 +345,7 @@ Window {
                 }
             }
 
-            color: "#100019"
+            color: Appearance.background
         }
     }
 

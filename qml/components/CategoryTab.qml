@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Effects
+import Quantum
 
 Item {
     id: root
@@ -9,14 +10,14 @@ Item {
     property int tabWidth: 238
     property string tabText
     property string tabIcon
-    property color hoverFillColor: "#1B002B"
-    property color pressedFillColor: "#2A0040"
-    property color normalFillColor: "#100019"
-    property color selectedFillColor: "#1E0030"
-    property color normalBorderColor: "#35003D"
-    property color selectedBorderColor: "#AC00FB"
+    property color hoverFillColor: Appearance.surfaceHover
+    property color pressedFillColor: Appearance.surfacePressed
+    property color normalFillColor: Appearance.background
+    property color selectedFillColor: Appearance.surfaceSelected
+    property color normalBorderColor: Appearance.surface
+    property color selectedBorderColor: Appearance.borderAccent
     property color textSelectedColor: "#FFFFFF"
-    property color textNormalColor: "#656565"
+    property color textNormalColor: Appearance.textSecondary
     property bool isSelected: false
     signal clicked()
 

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Effects
+import Quantum
 
 Item {
     id: root
@@ -9,10 +10,10 @@ Item {
     property int buttonWidth
     property string buttonText
     property string buttonIcon
-    property color fillColor: "#35003D"
-    property color hoverColor: "#4A0055"
-    property color pressedColor: "#2A0030"
-    property color borderColor: "#AC00FB"
+    property color fillColor: Appearance.surface
+    property color hoverColor: Appearance.buttonHover
+    property color pressedColor: Appearance.buttonPressed
+    property color borderColor: Appearance.borderAccent
     property bool buttonEnabled: true
     signal clicked()
 
@@ -90,7 +91,7 @@ Item {
                 text: buttonText
                 font.family: appFont.name
                 font.pixelSize: 15
-                color: "#ffffff"
+                color: Appearance.chromeText
             }
 
             // Right spacer

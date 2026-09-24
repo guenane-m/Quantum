@@ -1,12 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Layouts
+import Quantum
 import "../components"
 
 Item {
     id: root
 
-    property color fillColor: "#100019"
-    property color borderColor: "#35003D"
+    property color fillColor: Appearance.background
+    property color borderColor: Appearance.surface
     property int currentCategory: 0
 
     signal newDownloadRequested()
@@ -56,8 +57,8 @@ Item {
                         counterHeight: 70
                         counterWdith: 90
 
-                        fillColor: "#041500"
-                        borderColor: "#0AC300"
+                        fillColor: Appearance.successBackground
+                        borderColor: Appearance.success
 
                         counterText: backend.completedCount
                         titleText: "COMPLETED"
@@ -70,8 +71,8 @@ Item {
                         counterHeight: 70
                         counterWdith: 90
 
-                        fillColor: "#150000"
-                        borderColor: "#C30003"
+                        fillColor: Appearance.dangerBackground
+                        borderColor: Appearance.danger
 
                         counterText: backend.downloadCount
                         titleText: "DOWNLOADING"
@@ -135,7 +136,7 @@ Item {
                         text: "CATEGORIES"
                         font.family: appFont.name
                         font.pixelSize: 12
-                        color: "#595959"
+                        color: Appearance.textMuted
                     }
 
                     Item {
@@ -253,8 +254,8 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 215
 
-                    fillColor: fillColor
-                    borderColor: borderColor
+                    fillColor: Appearance.background
+                    borderColor: Appearance.surface
 
                     buttonText: "Settings"
                     buttonIcon: "qrc:/qml/assets/icons/setting.svg"

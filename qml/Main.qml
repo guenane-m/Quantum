@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Window
 import Qt.labs.platform
+import Quantum
 import "components"
 import "pages"
 
@@ -192,7 +193,7 @@ ApplicationWindow
             width: parent.width
             height: 26.25
 
-            color: "#000000"
+            color: Appearance.chromeBackground
 
             // Add title bar content
             RowLayout {
@@ -212,7 +213,7 @@ ApplicationWindow
                     text: "QUANTUM DOWNLOAD MANAGER"
                     font.family: appFont.name
                     font.pixelSize: 15
-                    color: "#ffffff"
+                    color: Appearance.chromeText
                     Layout.alignment: Qt.AlignVCenter
                 }
 
@@ -220,7 +221,7 @@ ApplicationWindow
                     text: "v1.6.1";
                     font.family: appFont.name
                     font.pixelSize: 13
-                    color: "#616161"
+                    color: Appearance.chromeVersionText
                     Layout.alignment: Qt.AlignVCenter
                 }
 
@@ -266,8 +267,8 @@ ApplicationWindow
                     WindowButton {
                         id: close
                         buttonIcon: "qrc:/qml/assets/icons/close.png"
-                        hoverColor: "#ff0000"
-                        clickColor: "#700000"
+                        hoverColor: Appearance.closeButtonHover
+                        clickColor: Appearance.closeButtonPressed
                         onClicked: root.closeAnimated()
                     }
                 }
@@ -290,8 +291,8 @@ ApplicationWindow
             height: parent.height - titleBar.height
 
             gradient: Gradient {
-                GradientStop{ position: 0.0; color: "#1F0024"}
-                GradientStop{ position: 1.0; color: "#0E0010"}
+                GradientStop{ position: 0.0; color: Appearance.backgroundTop}
+                GradientStop{ position: 1.0; color: Appearance.backgroundBottom}
             }
 
             MainPage {

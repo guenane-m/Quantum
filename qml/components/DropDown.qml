@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Window 2.15
+import Quantum
 
 Item {
     id: root
@@ -9,12 +10,12 @@ Item {
     property int buttonHeight
     property int buttonWidth
     property string buttonIcon
-    property color fillColor: "#35003D"
-    property color hoverColor: "#4A0055"
-    property color pressedColor: "#2A0030"
-    property color borderColor: "#AC00FB"
-    property color popupColor: "#1B002B"
-    property color itemHoverColor: "#2A0040"
+    property color fillColor: Appearance.surface
+    property color hoverColor: Appearance.buttonHover
+    property color pressedColor: Appearance.buttonPressed
+    property color borderColor: Appearance.borderAccent
+    property color popupColor: Appearance.surfaceHover
+    property color itemHoverColor: Appearance.popupItemHover
 
     property var model: []
     property int currentIndex: 0
@@ -99,13 +100,13 @@ Item {
                 text: root.currentText
                 font.family: appFont.name
                 font.pixelSize: 15
-                color: "#ffffff"
+                color: Appearance.chromeText
             }
 
             Text {
                 text: isActivated ? "▲" : "▼"
                 font.pixelSize: 10
-                color: "#ffffff"
+                color: Appearance.chromeText
             }
 
             Item { Layout.fillWidth: true }
@@ -155,7 +156,7 @@ Item {
                             anchors.leftMargin: 10
                             verticalAlignment: Text.AlignVCenter
                             text: modelData
-                            color: "#ffffff"
+                            color: Appearance.chromeText
                             font.family: appFont.name
                             font.pixelSize: 14
                         }

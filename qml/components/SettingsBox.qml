@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts
+import Quantum
 
 Rectangle {
     id: root
@@ -9,7 +10,7 @@ Rectangle {
     default property alias content: column.data
     property string title : "ZAYTIIIII"
 
-    color: "#35003D"
+    color: Appearance.surface
     radius: 10
 
     FontLoader {

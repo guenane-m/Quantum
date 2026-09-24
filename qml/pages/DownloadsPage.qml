@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import Quantum
 import "../components"
 import "../js/Helper.js" as Helper
 
@@ -98,8 +99,8 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 170
 
-                    fillColor: fillColor
-                    borderColor: borderColor
+                    fillColor: Appearance.background
+                    borderColor: Appearance.surface
 
                     buttonText: "New Download"
                     buttonIcon: "qrc:/qml/assets/icons/download.svg"
@@ -127,8 +128,8 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 120
 
-                    fillColor: fillColor
-                    borderColor: borderColor
+                    fillColor: Appearance.background
+                    borderColor: Appearance.surface
 
                     buttonText: "Pause All"
                     buttonIcon: "qrc:/qml/assets/icons/pause.svg"
@@ -150,8 +151,8 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 120
 
-                    fillColor: fillColor
-                    borderColor: borderColor
+                    fillColor: Appearance.background
+                    borderColor: Appearance.surface
 
                     buttonText: "Resume All"
                     buttonIcon: "qrc:/qml/assets/icons/play.svg"
@@ -177,8 +178,8 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 180
 
-                    fillColor: fillColor
-                    borderColor: borderColor
+                    fillColor: Appearance.background
+                    borderColor: Appearance.surface
 
                     buttonText: "Remove Completed"
                     buttonIcon: "qrc:/qml/assets/icons/close.svg"

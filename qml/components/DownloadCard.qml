@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts
+import Quantum
 
 Rectangle {
     id: root
@@ -22,8 +23,8 @@ Rectangle {
     height: 100
     width: ListView.view ? ListView.view.width : parent.width
 
-    color: "#35003D"
-    border.color: "#AC00FB"
+    color: Appearance.surface
+    border.color: Appearance.borderAccent
     border.width: 2
     radius: 5
 

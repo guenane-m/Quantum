@@ -40,6 +40,10 @@ qt_add_executable(QuantumNativeHost WIN32 MACOSX_BUNDLE
     native-host/nativemessaging.cpp native-host/nativemessaging.h
 )
 
+# Set appearance.qml as singleton.
+set_source_files_properties(qml/Appearance.qml
+    PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
 qt_add_qml_module(Quantum
     URI Quantum
     VERSION ${PROJECT_VERSION}
@@ -89,6 +93,7 @@ qt_add_qml_module(Quantum
     SOURCES src/settings/appsettings.h
     RESOURCES
     RESOURCES
+    QML_FILES qml/Appearance.qml
 )
 
 # Avoid collision between executable name and QML module directory (QTBUG-98568).
