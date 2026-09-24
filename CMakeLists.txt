@@ -61,6 +61,10 @@ qt_add_qml_module(Quantum
         qml/components/ProgressBar.qml
         qml/components/DropDown.qml
         qml/pages/DownloadsPage.qml
+        qml/pages/SettingsPage.qml
+        qml/components/SettingsBox.qml
+        qml/components/SettingRow.qml
+        qml/Appearance.qml
     RESOURCES
         qml/assets/icons/maximize.png
         qml/assets/icons/minimize.png
@@ -82,18 +86,12 @@ qt_add_qml_module(Quantum
         qml/assets/icons/close.png
         qml/assets/icons/compressed.svg
         qml/assets/icons/reset.svg
+        packaging/quantum.rc
     NO_RESOURCE_TARGET_PATH
-    SOURCES src/backend/nativehostsocket.h src/backend/nativehostsocket.cpp
-    RESOURCES packaging/quantum.rc
-    QML_FILES qml/pages/SettingsPage.qml
-    QML_FILES qml/components/SettingsBox.qml
-    QML_FILES qml/components/SettingRow.qml
     SOURCES
-    SOURCES src/settings/settingsmanager.h src/settings/settingsmanager.cpp
-    SOURCES src/settings/appsettings.h
-    RESOURCES
-    RESOURCES
-    QML_FILES qml/Appearance.qml
+        src/settings/settingsmanager.h src/settings/settingsmanager.cpp
+        src/settings/appsettings.h
+        src/backend/nativehostsocket.h src/backend/nativehostsocket.cpp
 )
 
 # Avoid collision between executable name and QML module directory (QTBUG-98568).
