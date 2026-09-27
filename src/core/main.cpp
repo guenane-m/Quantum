@@ -18,6 +18,7 @@
 
 #include "src/backend/backend.h"
 #include "src/settings/settingsmanager.h"
+#include "src/theme/thememanager.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -45,6 +46,17 @@ int main(int argc, char *argv[])
 
     SettingsManager *settingsMan(new SettingsManager(nullptr));
     settingsMan->load();
+
+    // Theme:
+    const QString themePath =
+        QStringLiteral(":/appearance/default.yaml");
+
+    // 2. Create + register the singleton BEFORE loading the engine.
+    ThemeManager theme;
+    qmlRegisterSingletonInstance("Quantum", 1, 0, "Appearance", &theme);
+
+    // 3. Load.
+    theme.load(themePath);
 
     Backend backend(settingsMan);
 

@@ -33,5 +33,6 @@
         <file>qml/assets/icons/compressed.svg</file>
         <file>qml/pages/DownloadsPage.qml</file>
         <file>qml/assets/icons/reset.svg</file>
+        <file>appearance/default.yaml</file>
     </qresource>
 </RCC>
