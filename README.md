@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/Platforms-Windows_%7C_Linux-FF6B6B" alt="Platforms">
   <img src="https://img.shields.io/badge/Qt-6.9%2B-41CD52?logo=qt" alt="Qt Version">
   <img src="https://img.shields.io/badge/C%2B%2B-17-2980B9?logo=c%2B%2B" alt="C++ Version">
+  <img src="https://img.shields.io/github/repo-size/guenane-m/Quantum" alt ="Repo Size">
 </p>
 
 An Open-Source, Cross-Platform Download Manager built using C++ and Qt's built-in Network libraries.
