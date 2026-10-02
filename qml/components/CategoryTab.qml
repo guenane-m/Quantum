@@ -14,9 +14,9 @@ Item {
     property color pressedFillColor: Appearance.surfacePressed
     property color normalFillColor: Appearance.background
     property color selectedFillColor: Appearance.surfaceSelected
-    property color normalBorderColor: Appearance.surface
+    property color normalBorderColor: Appearance.border
     property color selectedBorderColor: Appearance.borderAccent
-    property color textSelectedColor: "#FFFFFF"
+    property color textSelectedColor: Appearance.textPrimary
     property color textNormalColor: Appearance.textSecondary
     property bool isSelected: false
     signal clicked()

@@ -99,6 +99,7 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 170
 
+                    // Change the default button colors for custom appearance.
                     fillColor: Appearance.background
                     borderColor: Appearance.surface
 
@@ -128,6 +129,7 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 120
 
+                    // Change the default button colors for custom appearance.
                     fillColor: Appearance.background
                     borderColor: Appearance.surface
 
@@ -151,6 +153,7 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 120
 
+                    // Change the default button colors for custom appearance.
                     fillColor: Appearance.background
                     borderColor: Appearance.surface
 
@@ -178,6 +181,7 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 180
 
+                    // Change the default button colors for custom appearance.
                     fillColor: Appearance.background
                     borderColor: Appearance.surface
 

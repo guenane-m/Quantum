@@ -23,7 +23,7 @@ Rectangle {
             Layout.preferredWidth: (progress * root.width) / 100 - 2
             Layout.preferredHeight: 14
 
-            color: progress === 100 ? Appearance.progressFillComplete : Appearance.accentDim
+            color: progress === 100 ? Appearance.progressFillComplete : Appearance.progressFill
         }
     }
 }

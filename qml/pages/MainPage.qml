@@ -254,6 +254,7 @@ Item {
                     buttonHeight: 32
                     buttonWidth: 215
 
+                    // Change the default button colors for custom appearance.
                     fillColor: Appearance.background
                     borderColor: Appearance.surface
 

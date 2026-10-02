@@ -10,10 +10,10 @@ Item {
     property int buttonWidth
     property string buttonText
     property string buttonIcon
-    property color fillColor: Appearance.surface
+    property color fillColor: Appearance.buttonFill
     property color hoverColor: Appearance.buttonHover
     property color pressedColor: Appearance.buttonPressed
-    property color borderColor: Appearance.borderAccent
+    property color borderColor: Appearance.buttonBorder
     property bool buttonEnabled: true
     signal clicked()
 

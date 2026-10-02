@@ -30,7 +30,7 @@ Rectangle {
             text: title
             font.family: appFont.name
             font.pixelSize: 16
-            color: "#FFFFFF"
+            color: Appearance.textPrimary
         }
     }
 }

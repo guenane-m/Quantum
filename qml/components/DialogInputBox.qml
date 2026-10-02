@@ -27,7 +27,7 @@ Item {
         Rectangle {
             id: urlBox
 
-            color: input.hovered ? Appearance.inputBackgroundHover : Appearance.background
+            color: input.hovered ? Appearance.inputBackgroundHover : Appearance.inputBackground
 
             radius: 6
 
