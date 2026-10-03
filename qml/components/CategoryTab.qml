@@ -68,6 +68,7 @@ Item {
             Image {
                 id: icon
                 source: backend.coloredSvg(tabIcon, "white")
+                sourceSize: Qt.size(48, 48)
 
                 visible: false
             }

@@ -84,6 +84,7 @@ Item {
             Image {
                 id: icon
                 source: buttonIcon
+                sourceSize: Qt.size(48, 48)
                 visible: buttonIcon !== ""
                 Layout.preferredHeight: 16.25
                 Layout.preferredWidth: 16.25

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts
 import QtQuick.Effects
+import QtQuick.Window
 import Quantum
 
 Item {
@@ -79,6 +80,7 @@ Item {
                 Layout.fillWidth: false
 
                 source: backend.coloredSvg(buttonIcon, "white")
+                sourceSize: Qt.size(48, 48)
             }
 
             FontLoader {
