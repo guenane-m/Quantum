@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Added version tag to popup ui.
 - $\color{green}{\textsf{FireFox Web Integration}}$ :
     - Added version tag to popup ui.
-    
+- Added Abbility to change ui theme colors using structured yaml config files.    
+
 ### Changed
 - Removed old qrc file from previous qmake build system.
 - Reassigned wrong color properties for ui components.

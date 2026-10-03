@@ -9,6 +9,7 @@
 #include "src/core/databasemanager.h"
 #include "nativehostsocket.h"
 #include "src/settings/settingsmanager.h"
+#include "src/theme/thememanager.h"
 
 #include <QObject>
 #include <QStandardPaths>
@@ -39,7 +40,7 @@ class Backend : public QObject
     Q_PROPERTY(QString savePath READ savePath WRITE setSavePath NOTIFY settingsChanged FINAL)
 
 public:
-    explicit Backend(SettingsManager *settingsManager, QObject *parent = nullptr);
+    explicit Backend(SettingsManager *settingsManager, ThemeManager *themeManager, QObject *parent = nullptr);
 
     void StartWebServer();
     Q_INVOKABLE void clearDatabase();
@@ -58,6 +59,7 @@ public:
     Q_INVOKABLE void setCategory(int category);
     Q_INVOKABLE void setHeadReqCompleted(bool val);
     Q_INVOKABLE void setSavePath(const QString &path);
+    Q_INVOKABLE void setTheme(const QString &path);
 
     DownloadCategory detectCategory(const QString &filename);
 
@@ -99,6 +101,7 @@ private:
     DatabaseManager *m_databaseManager;
     NativeHostSocket *m_nativeHostSocket;
     SettingsManager *m_settingsManager;
+    ThemeManager *m_themeManager;
     QString m_fileName;
     qint64 m_fileSize = 0;
     bool m_isHeadReqActive = false;

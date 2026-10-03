@@ -28,7 +28,7 @@ Item {
                     title: "Default download save location"
 
                     FolderDialog {
-                        id: folderDialog
+                        id: downloadLocDialog
 
                         title: "Select download location"
                         currentFolder: Helper.formatFilePaths(backend.savePath)
@@ -39,14 +39,12 @@ Item {
                     }
 
                     UiButton {
-                        id: browseButton
-
                         buttonHeight: 32
                         buttonWidth: 130
                         buttonText: "Browse"
                         buttonIcon: "qrc:/qml/assets/icons/folder.svg"
 
-                        onClicked: folderDialog.open()
+                        onClicked: downloadLocDialog.open()
                     }
                 }
 
@@ -63,6 +61,37 @@ Item {
                         onClicked: {
                             backend.clearDatabase()
                         }
+                    }
+                }
+            }
+
+            SettingsBox {
+                title: "Appearance Settings"
+                Layout.fillWidth: true
+
+                SettingRow {
+                    title: "Change theme configuration file"
+
+                    FileDialog {
+                        id: themeFileDialog
+
+                        title: "Select theme configuration file"
+
+                        nameFilters: ["YAML files (*.yaml)"]
+                        currentFolder: Helper.formatFilePaths(backend.savePath)
+
+                        onAccepted: {
+                            backend.setTheme(Helper.formatFilePaths(selectedFile))
+                        }
+                    }
+
+                    UiButton {
+                        buttonHeight: 32
+                        buttonWidth: 130
+                        buttonText: "Browse"
+                        buttonIcon: "qrc:/qml/assets/icons/folder.svg"
+
+                        onClicked: themeFileDialog.open()
                     }
                 }
             }

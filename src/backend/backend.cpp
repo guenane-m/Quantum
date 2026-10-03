@@ -1,6 +1,6 @@
 #include "backend.h"
 
-Backend::Backend(SettingsManager *settingsManager, QObject *parent)
+Backend::Backend(SettingsManager *settingsManager, ThemeManager *themeManager, QObject *parent)
     : QObject{parent}
     , m_webServer(new QTcpServer(this))
     , manager(new QNetworkAccessManager(this))
@@ -8,6 +8,7 @@ Backend::Backend(SettingsManager *settingsManager, QObject *parent)
     , m_databaseManager(new DatabaseManager(this))
     , m_nativeHostSocket(new NativeHostSocket(this))
     , m_settingsManager(settingsManager)
+    , m_themeManager(themeManager)
 {
     m_downloadModel.setDownloads(&m_downloads);
 
@@ -740,6 +741,11 @@ void Backend::setSavePath(const QString &path)
         .SavePath = path;
 
     emit settingsChanged();
+}
+
+void Backend::setTheme(const QString &path)
+{
+    m_themeManager->load(path);             // Load the passed appearance configuration path.
 }
 
 Backend::~Backend()

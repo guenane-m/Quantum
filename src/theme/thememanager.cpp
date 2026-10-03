@@ -78,6 +78,7 @@ void ThemeManager::load(const QString &path)
     READ(dangerBackground,    _)
 #undef READ
 
+    emit changed();                             // Notify when color configuration is changed.
 }
 
 QColor ThemeManager::readColor(const QString &key, const QColor &fallBack)

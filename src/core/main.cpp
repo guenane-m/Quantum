@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
     // Theme:
     const QString themePath =
-        QStringLiteral(":/appearance/default.yaml");
+        QStringLiteral(":/appearance/darkblue.yaml");
 
     // 2. Create + register the singleton BEFORE loading the engine.
     ThemeManager theme;
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     // 3. Load.
     theme.load(themePath);
 
-    Backend backend(settingsMan);
+    Backend backend(settingsMan, &theme);
 
     QQmlApplicationEngine engine;
 

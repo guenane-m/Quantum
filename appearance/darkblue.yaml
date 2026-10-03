@@ -1,0 +1,62 @@
+theme:
+  # Window chrome
+  chromeBackground:     "#000000"
+  chromeText:           "#ffffff"
+  chromeVersionText:    "#616161"
+  windowButtonHover:    "#151515"
+  windowButtonPressed:  "#101010"
+  closeButtonHover:     "#ff0000"
+  closeButtonPressed:   "#700000"
+
+  # Background
+  backgroundTop:        "#00132B"
+  backgroundBottom:     "#000A18"
+  background:           "#00101F"
+
+  # Surfaces
+  surface:              "#002040"
+  surfaceHover:         "#00172E"
+  surfacePressed:       "#002347"
+  surfaceSelected:      "#001A38"
+  popupItemHover:       "#002347"
+
+  # Borders
+  border:               "#002040"
+  borderAccent:         "#0A84FF"
+
+  # Text
+  textPrimary:          "#ffffff"
+  textSecondary:        "#656565"
+  textMuted:            "#595959"
+  textDim:              "#808080"
+
+  # Accent
+  accent:               "#0A84FF"
+  accentFocus:          "#2E96FF"
+  accentDim:            "#003A70"
+
+  # Buttons
+  buttonFill:           "#002040"
+  buttonHover:          "#003366"
+  buttonPressed:        "#001830"
+  buttonBorder:         "#0A84FF"
+  buttonText:           "#ffffff"
+
+  # Inputs
+  inputBackground:      "#00101F"
+  inputBackgroundHover: "#001A33"
+  inputBorder:          "#003A70"
+  inputBorderFocus:     "#2E96FF"
+  inputText:            "#ffffff"
+
+  # Progress
+  progressTrack:        "#00132B"
+  progressFill:         "#003A70"
+  progressFillComplete: "#209F00"
+  progressBorder:       "#0A84FF"
+
+  # Status
+  success:              "#0AC300"
+  successBackground:    "#041500"
+  danger:               "#C30003"
+  dangerBackground:     "#150000"

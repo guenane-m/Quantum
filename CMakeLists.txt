@@ -82,6 +82,7 @@ qt_add_qml_module(Quantum
         qml/assets/icons/compressed.svg
         qml/assets/icons/reset.svg
         appearance/default.yaml
+        appearance/darkblue.yaml
         packaging/quantum.rc
     NO_RESOURCE_TARGET_PATH
     SOURCES
