@@ -218,7 +218,7 @@ ApplicationWindow
                 }
 
                 Text {
-                    text: "v1.6.1";
+                    text: "v1.6.3";
                     font.family: appFont.name
                     font.pixelSize: 13
                     color: Appearance.chromeVersionText
