@@ -18,8 +18,7 @@ ApplicationWindow
 
     opacity: 0
 
-    visible: true
-    Component.onCompleted: openAnimated()
+    visible: false
 
     property bool isMaximized: false
     property rect normalGeometry: Qt.rect(x, y, width, height)
