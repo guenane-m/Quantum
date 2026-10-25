@@ -205,7 +205,49 @@ Item {
             ColumnLayout {
                 anchors.fill: parent
 
+                Item {
+                    visible: downloadsListView.count === 0
+
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    Layout.margins: 15
+
+                    ColumnLayout {
+                        anchors.centerIn: parent
+
+                        Image {
+                            id: placeHolderIcon
+                            source: backend.coloredSvg("qrc:/qml/assets/icons/empty.svg", "white")
+                            sourceSize: Qt.size(128, 128)
+
+                            height: 128
+                            width: 128
+
+                            Layout.alignment: Qt.AlignCenter
+                        }
+
+                        FontLoader {
+                            id: appFont
+                            source: "qrc:/qml/assets/fonts/Lexend.ttf"
+                        }
+
+                        Text {
+                            id: placeHolderText
+                            text: "No downloads yet..."
+
+                            font.family: appFont.name
+                            font.pixelSize: 35
+                            color: "#ffffff"
+                            Layout.alignment: Qt.AlignCenter
+                        }
+                    }
+                }
+
                 ListView {
+                    id: downloadsListView
+
+                    visible: count > 0
+
                     Layout.margins: 15
 
                     Layout.fillWidth: true
@@ -246,10 +288,6 @@ Item {
                             }
                         }
                     }
-                }
-
-                Item {
-                    Layout.fillHeight: true
                 }
             }
         }

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added empty state page when no download cards are listed in the main page.
+
 ### Changed
 - Hid the app main window on startup, so it is minimized to taskbar by default.
 

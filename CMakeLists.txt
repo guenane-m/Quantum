@@ -81,6 +81,7 @@ qt_add_qml_module(Quantum
         qml/assets/icons/close.png
         qml/assets/icons/compressed.svg
         qml/assets/icons/reset.svg
+        qml/assets/icons/empty.svg
         appearance/default.yaml
         appearance/darkblue.yaml
         packaging/quantum.rc
